@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation  files('libs/mysql-connector-j-8.0.31.jar')
+    implementation  files('libs/stanford-corenlp-4.5.1-models.jar')
+    implementation  files('libs/stanford-corenlp-4.5.1-sources.jar')
+    implementation  files('libs/stanford-corenlp-4.5.1.jar')
+    implementation  files('libs/commons-io-2.11.0.jar')
+    implementation  files('libs/commons-collections4-4.4.jar')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
