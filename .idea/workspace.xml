@@ -4,24 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1537743c-4633-4d25-8b8d-72c6eda89e6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+    <list default="true" id="1537743c-4633-4d25-8b8d-72c6eda89e6f" name="Changes" comment="initial commit">
       <change afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/command_interface/CommandInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/configuration/DBConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/SchemaGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/components/StanfordNLParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/Query.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/Sentence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/elements/Edge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/elements/SchemaElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/command_interface/CommandInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command_interface/CommandInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/SchemaGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/SchemaGraph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,21 +45,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Uni/4th Year/Research/My code/my nlidb/we-ui-nlidb",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.4041096"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Uni/4th Year/Research/My code/my nlidb/we-ui-nlidb&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4041096&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Application.CommandInterface">
+    <configuration name="CommandInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="command_interface.CommandInterface" />
+      <module name="we-ui-nlidb.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="command_interface.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchemaGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="database.SchemaGraph" />
+      <module name="we-ui-nlidb.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="we-ui-nlidb.main" />
@@ -82,6 +101,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CommandInterface" />
+        <item itemvalue="Application.SchemaGraph" />
         <item itemvalue="Application.main.Main" />
       </list>
     </recent_temporary>
@@ -95,8 +116,19 @@
       <option name="presentableId" value="Default" />
       <updated>1667305556454</updated>
       <workItem from="1667305557467" duration="9899000" />
-      <workItem from="1667371509055" duration="1651000" />
+      <workItem from="1667371509055" duration="13101000" />
+      <workItem from="1667539457978" duration="1542000" />
+      <workItem from="1667882647112" duration="36132000" />
+      <workItem from="1668071512851" duration="14458000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1667373957454</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667373957454</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,5 +144,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
 </project>
