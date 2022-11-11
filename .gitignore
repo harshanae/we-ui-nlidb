@@ -43,3 +43,6 @@ bin/
 
 ### Libraries ###
 libs/
+
+### config files
+config.properties

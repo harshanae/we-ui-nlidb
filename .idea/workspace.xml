@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1537743c-4633-4d25-8b8d-72c6eda89e6f" name="Changes" comment="initial commit">
+    <list default="true" id="1537743c-4633-4d25-8b8d-72c6eda89e6f" name="Changes" comment="Added Stanford parser component">
       <change afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/StanfordNLParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/Query.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/Sentence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/elements/Edge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/elements/SchemaElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command_interface/CommandInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command_interface/CommandInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/SchemaGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/SchemaGraph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +112,7 @@
       <workItem from="1667371509055" duration="13101000" />
       <workItem from="1667539457978" duration="1542000" />
       <workItem from="1667882647112" duration="36132000" />
-      <workItem from="1668071512851" duration="14458000" />
+      <workItem from="1668071512851" duration="15236000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667373957454</created>
@@ -128,7 +121,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667373957454</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added Schema graph">
+      <created>1668122568849</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668122568849</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Stanford parser component">
+      <created>1668122621867</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668122621867</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +154,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="Added Schema graph" />
+    <MESSAGE value="Added Stanford parser component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Stanford parser component" />
   </component>
 </project>
