@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1537743c-4633-4d25-8b8d-72c6eda89e6f" name="Changes" comment="Added Stanford parser component">
+    <list default="true" id="1537743c-4633-4d25-8b8d-72c6eda89e6f" name="Changes" comment="updated gitignore file">
       <change afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/ParseTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/ParseTreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/elements/MappedSchemaElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +114,8 @@
       <workItem from="1667371509055" duration="13101000" />
       <workItem from="1667539457978" duration="1542000" />
       <workItem from="1667882647112" duration="36132000" />
-      <workItem from="1668071512851" duration="15236000" />
+      <workItem from="1668071512851" duration="18702000" />
+      <workItem from="1668168498326" duration="6238000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667373957454</created>
@@ -135,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668122621867</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="updated gitignore file">
+      <created>1668154954080</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668154954080</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +166,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="Added Schema graph" />
     <MESSAGE value="Added Stanford parser component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Stanford parser component" />
+    <MESSAGE value="updated gitignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated gitignore file" />
   </component>
 </project>
