@@ -5,11 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1537743c-4633-4d25-8b8d-72c6eda89e6f" name="Changes" comment="updated gitignore file">
-      <change afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/ParseTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/ParseTreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/elements/MappedSchemaElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/contractions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/tokens.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/components/IdentifyEntitites.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/components/IntermediateTreeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/components/KeywordMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/components/SQLEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/Block.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/EntityPair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/FromContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/IntermediateTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/IntermediateTreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/NLSentence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/SQLElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/SelectContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/WhereContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/elements/MappedValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/CommonFunctions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/Contractions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/Dijkstra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/EucledianDistance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/InferAttributeNER.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/LevensteinDistanceDP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/PreprocessPipeline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/SimilarityFunctions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/Word2Vec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/settings/Parameters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/source-files/imdbEdges.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/source-files/imdbRelations.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/source-files/studentEdges.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/source-files/studentRelations.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/source-files/yelpEdges.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/source-files/yelpRelations.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/word2vec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/command_interface/CommandInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command_interface/CommandInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/StanfordNLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/StanfordNLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data_structures/ParseTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_structures/ParseTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data_structures/ParseTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_structures/ParseTreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data_structures/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_structures/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data_structures/Sentence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_structures/Sentence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/SchemaGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/SchemaGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/elements/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/elements/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/elements/MappedSchemaElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/elements/MappedSchemaElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/elements/SchemaElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/elements/SchemaElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +65,30 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="we-ui-nlidb" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="Class" />
       </list>
     </option>
@@ -42,18 +107,40 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Uni/4th Year/Research/My code/my nlidb/we-ui-nlidb&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Uni/4th_Year/Research/My code/my nlidb/we-ui-nlidb/libs&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.4041096&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.4041096&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;PyConsoleConfigurable.Python Console&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="we-ui-nlidb" sdk-home="C:\Python310\python.exe">
+        <option name="mySdkHome" value="C:\Python310\python.exe" />
+        <option name="myModuleName" value="we-ui-nlidb" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Uni\4th_Year\Research\My code\my nlidb\we-ui-nlidb\libs" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle ./gradlew sonar \" />
+    </option>
+  </component>
   <component name="RunManager" selected="Application.CommandInterface">
     <configuration name="CommandInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="command_interface.CommandInterface" />
@@ -61,6 +148,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="command_interface.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Dijkstra" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="database.util.Dijkstra" />
+      <module name="we-ui-nlidb.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="database.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -81,12 +181,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.Main" />
+    <configuration name="database.util.SimilarityFunctions" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="database.util.SimilarityFunctions" />
       <module name="we-ui-nlidb.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="database.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,11 +194,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="we-ui-nlidb [./gradlew sonar \]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="./gradlew" />
+            <option value="sonar" />
+            <option value="\" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.CommandInterface" />
+        <item itemvalue="Gradle.we-ui-nlidb [./gradlew sonar \]" />
         <item itemvalue="Application.SchemaGraph" />
-        <item itemvalue="Application.main.Main" />
+        <item itemvalue="Application.Dijkstra" />
+        <item itemvalue="Application.database.util.SimilarityFunctions" />
       </list>
     </recent_temporary>
   </component>
@@ -115,7 +240,72 @@
       <workItem from="1667539457978" duration="1542000" />
       <workItem from="1667882647112" duration="36132000" />
       <workItem from="1668071512851" duration="18702000" />
-      <workItem from="1668168498326" duration="6238000" />
+      <workItem from="1668168498326" duration="64438000" />
+      <workItem from="1668499400277" duration="2801000" />
+      <workItem from="1668507041105" duration="22215000" />
+      <workItem from="1668664178084" duration="772000" />
+      <workItem from="1668671766820" duration="3447000" />
+      <workItem from="1668961920558" duration="11133000" />
+      <workItem from="1669191724560" duration="2729000" />
+      <workItem from="1669535621572" duration="2899000" />
+      <workItem from="1669570727557" duration="10751000" />
+      <workItem from="1669954422127" duration="1537000" />
+      <workItem from="1670080499732" duration="4831000" />
+      <workItem from="1670566498042" duration="323000" />
+      <workItem from="1671182729732" duration="2006000" />
+      <workItem from="1671431898127" duration="766000" />
+      <workItem from="1671447452840" duration="8084000" />
+      <workItem from="1671623471952" duration="4501000" />
+      <workItem from="1671859738864" duration="8043000" />
+      <workItem from="1671974100832" duration="18077000" />
+      <workItem from="1672058156208" duration="40749000" />
+      <workItem from="1672203904100" duration="6661000" />
+      <workItem from="1672338475672" duration="26880000" />
+      <workItem from="1672593825959" duration="1114000" />
+      <workItem from="1672676009511" duration="6290000" />
+      <workItem from="1672728083096" duration="9372000" />
+      <workItem from="1672916349614" duration="738000" />
+      <workItem from="1672985410971" duration="47173000" />
+      <workItem from="1673256789089" duration="54643000" />
+      <workItem from="1673525669186" duration="5044000" />
+      <workItem from="1673690423402" duration="11945000" />
+      <workItem from="1673764513376" duration="28814000" />
+      <workItem from="1673863775469" duration="17608000" />
+      <workItem from="1673957611636" duration="11158000" />
+      <workItem from="1674178255147" duration="6687000" />
+      <workItem from="1674232862838" duration="392000" />
+      <workItem from="1674488203027" duration="1590000" />
+      <workItem from="1676286945171" duration="426000" />
+      <workItem from="1676352182127" duration="6674000" />
+      <workItem from="1676783586520" duration="217000" />
+      <workItem from="1676785013887" duration="1593000" />
+      <workItem from="1676885927380" duration="327000" />
+      <workItem from="1676889796120" duration="52290000" />
+      <workItem from="1677085186474" duration="14100000" />
+      <workItem from="1677302979330" duration="10093000" />
+      <workItem from="1677349665975" duration="21901000" />
+      <workItem from="1677437477067" duration="1454000" />
+      <workItem from="1677497468977" duration="16814000" />
+      <workItem from="1677584147078" duration="5229000" />
+      <workItem from="1677602051355" duration="22705000" />
+      <workItem from="1677695330216" duration="919000" />
+      <workItem from="1677731278706" duration="4834000" />
+      <workItem from="1677754806671" duration="11038000" />
+      <workItem from="1677905707615" duration="5228000" />
+      <workItem from="1677920567005" duration="38139000" />
+      <workItem from="1678045676633" duration="3398000" />
+      <workItem from="1678092490952" duration="13785000" />
+      <workItem from="1678118329752" duration="34588000" />
+      <workItem from="1678303738556" duration="5784000" />
+      <workItem from="1678346353061" duration="18186000" />
+      <workItem from="1678464874494" duration="956000" />
+      <workItem from="1678466477501" duration="382000" />
+      <workItem from="1678475223349" duration="18532000" />
+      <workItem from="1678542586375" duration="16113000" />
+      <workItem from="1678616001777" duration="16817000" />
+      <workItem from="1678647823764" duration="13893000" />
+      <workItem from="1678722702034" duration="1242000" />
+      <workItem from="1678732923293" duration="8683000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667373957454</created>
@@ -168,5 +358,23 @@
     <MESSAGE value="Added Stanford parser component" />
     <MESSAGE value="updated gitignore file" />
     <option name="LAST_COMMIT_MESSAGE" value="updated gitignore file" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="data_structures.ParseTreeNode" memberName="tokenType" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="query.parseTree.allNodes.get(2)" />
+        <watch expression="dependencyList.get(3)" />
+        <watch expression="query.parseTree.allNodes.get(2)" />
+        <watch expression="query.parseTree.allNodes.get(2)" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/we_ui_nlidb$word2vec.coverage" NAME="word2vec Coverage Results" MODIFIED="1668512023873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

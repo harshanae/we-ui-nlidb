@@ -1,0 +1,69 @@
+Find all movies directed by "Steven Spielberg" after 2006 - ok
+Who is the director of the movie "Catch Me If You Can"? - ok
+Find the actor who played "Captain Miller" in the movie "Saving Private Ryan" - ok
+What is the genre of the movie "Jurassic Park"? - ok
+Who was the director of the movie Joy from 2015? yes but Joy mapped as Verb
+Who acted "John Nash" in the movie "A Beautiful Mind"? yes but not WHO acts
+Find all movies written by "Matt Damon" - ok UI
+Find all movies written and produced by "Woody Allen" - ok but need to be different conditions
+Find all movies featuring "Kate Winslet" - ok
+What was the budget of the movie Juno from 2007? - ok
+Find all comedies produced in year 2015 ** not
+Who was the actor that played "Vinny Gambini" in the movie "My Cousin Vinny"? - ok
+Find all actors born in "Los Angeles" after 1980 - ok
+Find all movies by directors born in "Los Angeles" - ok
+What company produced the movie "Juno"? - not
+Find all movies that were produced by Netflix - ok
+Find all actors who were born in "New York City" in 1984 - ok
+Find all movies about Persians - ok UI
+Who are the actors born in "New York City" after 1990? - ok
+Find all movies produced by "Walt Disney" after 2010 - ok
+Find all movies featuring "Benedict Cumberbatch" - ok UI
+Which movies did "Alfred Hitchcock" direct? - ok
+Find all movies about Autism - ok UI
+Find all movies directed by "Woody Allen" and featuring "Scarlett Johansson" - ok UI
+What are all the tv series created by "Shonda Rhimes"? - ok
+Who acts "Olivia Pope" in the series Scandal? not Who acts
+What are all the movies directed by "Quentin Tarantino" featuring "Christoph Waltz"? - ok UI
+Who directed the movie "Inglourious Basterds"? - not Who acts
+Who is the writer of the movie "Django Unchained" - ok
+What are the series featuring "Kerry Washington"? - ok
+What are all the movies featuring "Kerry Washington"? - ok
+Find the directors of all movies featuring "Kate Winslet" - not remove OT
+Find the producers of all movies in which "Kate Winslet" is an actor - not remove QT
+What are the series in which "Scott Foley" is an actor? - ok
+What company produced the series Scandal? not  but What is the comapny that produced the series Scandal? works
+Find all tv series produced by Netflix - ok
+Find all movies produced by Netflix - ok
+Find all movies featuring "Kevin Spacey" - ok UI
+Who is the director of the series "House of Cards" produced by Netflix? - ok
+Who is the director of the tv series "House of Cards" from 2013? - ok
+Find all movies in which "Robin Wright" appears - ok UI
+Find all the female actors from Austin - ok
+Find all actors from Austin born after 1980 - ok
+How many movies are there that are directed by "Steven Spielberg" and featured by "Matt Damon"? not - Add How many What ok UI
+Find all actors from Italy born after 1980 - ok
+Find all the female actors born in "New York City" after 1980  - ok
+Find all the female actors in the movie "Saving Private Ryan" - ok
+Who acts as "Alan Turing" in the movie "The Imitation Game"? - not WHO acts
+Who is the actor playing "Alan Turing" in "The Imitation Game"? -ok
+What year was the movie "The Imitation Game" produced - ok
+Find all movies about "Iraq war" - ok
+Find all the directors who are from Afghanistan - ok
+Give me the name of all the actors from Afghanistan - not (name)
+Who is the writer of "The Truman Show" - ok
+List all the Sci-Fi movies which released in 2010 - ok UI
+Find the actors who played in the movie "Camp X-Ray" - ok
+Find all actors from Canada who acted in "James Bond" movies - ok UI
+List "James Bond" directors - not List NNP with James Bond root children nemei
+find all films in which "Rowan Atkinson" acted as "Mr. Bean" - ok UI
+List all the movies directed by "Asghar Farhadi" in which "Taraneh Alidoosti" played - ok UI
+where is the director of "The Past" from - ok WHERE intuition
+who acted the role of "Mr. Bean" - ok
+what are the genres of movies directed by "Asghar Farhadi" - ok UI
+Which movie had the character "Daffy Duck" *** - not What is the movie with the character "Daffy Duck"
+which company funded the "Mickey Mouse" series ***  - not (funded series)
+What are the roles in the movie "Daddy Long Legs" - ok UI delete needed
+List all male directors who worked with the "NBCUniversal" company - ok
+What are the movies related to nuclear weapons - ok
+List all the directors of movies about nuclear weapons - ok

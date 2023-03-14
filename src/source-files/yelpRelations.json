@@ -1,0 +1,215 @@
+[
+  {
+    "name": "business",
+    "type": "entity",
+    "attributes": [
+      {
+        "name": "business_id",
+        "type": "pk",
+        "pk": true
+      },
+      {
+        "importance": "primary",
+        "name": "name",
+        "type": "text"
+      },
+      {
+        "name": "full_address",
+        "type": "text"
+      },
+      {
+        "name": "city",
+        "type": "text"
+      },
+      {
+        "name": "latitude",
+        "type": "double"
+      },
+      {
+        "name": "longitude",
+        "type": "double"
+      },
+      {
+        "name": "review_count",
+        "type": "int"
+      },
+      {
+        "name": "is_open",
+        "type": "int"
+      },
+      {
+        "name": "rating",
+        "type": "double"
+      },
+      {
+        "name": "state",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "name": "category",
+    "type": "entity",
+    "weak": true,
+    "parent": "business",
+    "attributes": [
+      {
+        "name": "id",
+        "type": "pk",
+        "pk": true
+      },
+      {
+        "name": "business_id",
+        "type": "fk",
+        "fk": true
+      },
+      {
+        "importance": "primary",
+        "name": "category_name",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "name": "checkin",
+    "type": "entity",
+    "weak": true,
+    "parent": "business",
+    "attributes": [
+      {
+        "name": "cid",
+        "type": "pk",
+        "pk": true
+      },
+      {
+        "name": "business_id",
+        "type": "fk",
+        "fk": true
+      },
+      {
+        "importance": "primary",
+        "name": "count",
+        "type": "int"
+      },
+      {
+        "name": "day",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "name": "neighborhood",
+    "type": "entity",
+    "weak": true,
+    "parent": "business",
+    "attributes": [
+      {
+        "name": "id",
+        "type": "pk",
+        "pk": true
+      },
+      {
+        "name": "business_id",
+        "type": "fk",
+        "fk": true
+      },
+      {
+        "importance": "primary",
+        "name": "neighborhood_name",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "name": "review",
+    "type": "entity",
+    "attributes": [
+      {
+        "name": "rid",
+        "type": "pk",
+        "pk": true
+      },
+      {
+        "name": "business_id",
+        "type": "fk",
+        "fk": true
+      },
+      {
+        "name": "user_id",
+        "fk": true,
+        "type": "fk"
+      },
+      {
+        "name": "rating",
+        "type": "int"
+      },
+      {
+        "importance": "primary",
+        "name": "text",
+        "type": "text"
+      },
+      {
+        "name": "year",
+        "type": "int"
+      },
+      {
+        "name": "month",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "name": "tip",
+    "type": "entity",
+    "attributes": [
+      {
+        "name": "tip_id",
+        "type": "pk",
+        "pk": true
+      },
+      {
+        "name": "business_id",
+        "type": "fk",
+        "fk": true
+      },
+      {
+        "name": "user_id",
+        "fk": true,
+        "type": "fk"
+      },
+      {
+        "importance": "primary",
+        "name": "text",
+        "type": "text"
+      },
+      {
+        "name": "likes",
+        "type": "int"
+      },
+      {
+        "name": "year",
+        "type": "int"
+      },
+      {
+        "name": "month",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "name": "user",
+    "type": "entity",
+    "attributes": [
+      {
+        "name": "user_id",
+        "type": "pk",
+        "pk": true
+      },
+      {
+        "importance": "primary",
+        "name": "name",
+        "type": "text"
+      }
+    ]
+  }
+]

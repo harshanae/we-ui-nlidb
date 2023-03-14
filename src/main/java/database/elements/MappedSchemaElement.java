@@ -1,13 +1,16 @@
 package database.elements;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MappedSchemaElement implements Comparable<MappedSchemaElement>{
+public class MappedSchemaElement implements Comparable<MappedSchemaElement>, Serializable {
 
     public SchemaElement schemaElement;
     public double similarityScore = -1;
 
-    public ArrayList<String> mappedValues = new ArrayList<String>();
+//    public ArrayList<String> mappedValues = new ArrayList<String>();
+
+    public ArrayList<MappedValue> mappedValues = new ArrayList<>();
     public int choice;
 
     public MappedSchemaElement(SchemaElement schemaElement) {
@@ -29,7 +32,7 @@ public class MappedSchemaElement implements Comparable<MappedSchemaElement>{
 
         if(mappedValues.size()>0 & choice>=0) {
             for(int i=0; i<mappedValues.size() && i<3; i++) {
-                String val = mappedValues.get(i);
+                String val = mappedValues.get(i).value;
                 if(val.length() > 20) {
                     val = val.substring(0, 20); // if value is longer trim from back
                 }

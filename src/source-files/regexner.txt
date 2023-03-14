@@ -1,0 +1,4 @@
+Bachelor of (Arts|Laws|Science|Engineering|Divinity)	DEGREE
+Lalor	 LOCATION	PERSON
+Labor	 ORGANIZATION
+(Rs.) (1-9)

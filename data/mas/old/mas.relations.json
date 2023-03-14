@@ -1,0 +1,338 @@
+{
+  "author": {
+    "name": "author",
+    "type": "relation",
+    "attributes": {
+      "aid": {
+        "name": "aid",
+        "type": "int",
+        "pk": true,
+        "entropy": 20.602421592255116
+      },
+      "name": {
+        "importance": "primary",
+        "name": "name",
+        "type": "text",
+        "entropy": 20.53828608641235
+      },
+      "oid": {
+        "name": "oid",
+        "type": "int",
+        "fk": true,
+        "entropy": 7.389998229540798
+      },
+      "homepage": {
+        "name": "homepage",
+        "type": "text",
+        "entropy": 3.277865790262335
+      }
+    }
+  },
+  "cite": {
+    "name": "cite",
+    "type": "relation",
+    "join_table": true,
+    "attributes": {
+      "citing": {
+        "name": "citing",
+        "type": "int",
+        "fk": true,
+        "entropy": 20.307386399925612
+      },
+      "cited": {
+        "name": "cited",
+        "type": "int",
+        "fk": true,
+        "entropy": 19.75146760844212
+      }
+    }
+  },
+  "conference": {
+    "name": "conference",
+    "type": "relation",
+    "attributes": {
+      "cid": {
+        "name": "cid",
+        "type": "int",
+        "pk": true,
+        "entropy": 11.83091127974237
+      },
+      "name": {
+        "importance": "primary",
+        "name": "name",
+        "type": "text",
+        "entropy": 11.72699461077992
+      },
+      "homepage": {
+        "name": "homepage",
+        "type": "text",
+        "entropy": 10.04873686229901
+      }
+    }
+  },
+  "domain": {
+    "name": "domain",
+    "type": "relation",
+    "attributes": {
+      "did": {
+        "name": "did",
+        "type": "int",
+        "pk": true,
+        "entropy": 4.643856189774723
+      },
+      "name": {
+        "importance": "primary",
+        "name": "name",
+        "type": "text",
+        "entropy": 4.643856189774723
+      }
+    }
+  },
+  "domain_author": {
+    "name": "domain_author",
+    "type": "relation",
+    "join_table": true,
+    "attributes": {
+      "aid": {
+        "name": "aid",
+        "type": "int",
+        "fk": true,
+        "entropy": 19.81011291593325
+      },
+      "did": {
+        "name": "did",
+        "type": "int",
+        "fk": true,
+        "entropy": 4.285484816491709
+      }
+    }
+  },
+  "domain_conference": {
+    "name": "domain_conference",
+    "type": "relation",
+    "join_table": true,
+    "attributes": {
+      "cid": {
+        "name": "cid",
+        "type": "int",
+        "fk": true,
+        "entropy": 11.362931169484153
+      },
+      "did": {
+        "name": "did",
+        "type": "int",
+        "fk": true,
+        "entropy": 4.163974187011842
+      }
+    }
+  },
+  "domain_journal": {
+    "name": "domain_journal",
+    "type": "relation",
+    "join_table": true,
+    "attributes": {
+      "jid": {
+        "name": "jid",
+        "type": "int",
+        "fk": true,
+        "entropy": 9.39820910273449
+      },
+      "did": {
+        "name": "did",
+        "type": "int",
+        "fk": true,
+        "entropy": 4.243038690700853
+      }
+    }
+  },
+  "domain_keyword": {
+    "name": "domain_keyword",
+    "type": "relation",
+    "join_table": true,
+    "attributes": {
+      "did": {
+        "name": "did",
+        "type": "int",
+        "fk": true,
+        "entropy": 14.856013687498388
+      },
+      "kid": {
+        "name": "kid",
+        "type": "int",
+        "fk": true,
+        "entropy": 4.169458837949257
+      }
+    }
+  },
+  "domain_publication": {
+    "name": "domain_publication",
+    "type": "relation",
+    "join_table": true,
+    "attributes": {
+      "did": {
+        "name": "did",
+        "type": "int",
+        "fk": true,
+        "entropy": 4.2083531268937895
+      },
+      "pid": {
+        "name": "pid",
+        "type": "int",
+        "fk": true,
+        "entropy": 21.03568375975916
+      }
+    }
+  },
+  "journal": {
+    "name": "journal",
+    "type": "relation",
+    "attributes": {
+      "jid": {
+        "name": "jid",
+        "type": "int",
+        "pk": true
+      },
+      "name": {
+        "importance": "primary",
+        "name": "name",
+        "type": "text"
+      },
+      "homepage": {
+        "name": "homepage",
+        "type": "text"
+      }
+    }
+  },
+  "keyword": {
+    "name": "keyword",
+    "type": "relation",
+    "attributes": {
+      "kid": {
+        "name": "kid",
+        "type": "int",
+        "pk": true
+      },
+      "keyword": {
+        "importance": "primary",
+        "name": "keyword",
+        "type": "text"
+      }
+    }
+  },
+  "organization": {
+    "name": "organization",
+    "type": "relation",
+    "attributes": {
+      "oid": {
+        "name": "oid",
+        "type": "int",
+        "pk": true,
+        "entropy": 13.464290473852255
+      },
+      "name": {
+        "importance": "primary",
+        "name": "name",
+        "type": "text",
+        "entropy": 13.464290473852255
+      },
+      "continent": {
+        "name": "continent",
+        "type": "text",
+        "entropy": 2.2506953915991312
+      },
+      "homepage": {
+        "name": "homepage",
+        "type": "text",
+        "entropy": 13.463759594361898
+      }
+    }
+  },
+  "publication": {
+    "name": "publication",
+    "type": "relation",
+    "attributes": {
+      "pid": {
+        "name": "pid",
+        "type": "int",
+        "pk": true,
+        "entropy": 21.756686617873825
+      },
+      "title": {
+        "importance": "primary",
+        "name": "title",
+        "type": "text",
+        "entropy": 21.622353903865612
+      },
+      "abstract": {
+        "name": "abstract",
+        "type": "text",
+        "entropy": 15.046957741170191
+      },
+      "year": {
+        "name": "year",
+        "type": "int",
+        "entropy": 5.023196815093345
+      },
+      "cid": {
+        "name": "cid",
+        "type": "int",
+        "fk": true,
+        "entropy": 5.037593686379942
+      },
+      "jid": {
+        "name": "jid",
+        "type": "int",
+        "fk": true,
+        "entropy": 4.551230571125084
+      },
+      "reference_num": {
+        "name": "reference_num",
+        "type": "int",
+        "entropy": 4.245215762181276
+      },
+      "citation_num": {
+        "name": "citation_num",
+        "type": "int",
+        "entropy": 3.5763609443375914
+      }
+    }
+  },
+  "publication_keyword": {
+    "name": "publication_keyword",
+    "type": "relation",
+    "join_table": true,
+    "attributes": {
+      "pid": {
+        "name": "pid",
+        "type": "int",
+        "fk": true,
+        "entropy": 21.16513067587757
+      },
+      "kid": {
+        "name": "kid",
+        "type": "int",
+        "fk": true,
+        "entropy": 12.809959190541985
+      }
+    }
+  },
+  "writes": {
+    "name": "writes",
+    "type": "relation",
+    "join_table": true,
+    "attributes": {
+      "aid": {
+        "name": "aid",
+        "type": "int",
+        "fk": true,
+        "entropy": 18.923322341557654
+      },
+      "pid": {
+        "name": "pid",
+        "type": "int",
+        "fk": true,
+        "entropy": 21.49709415295385
+      }
+    }
+  }
+}

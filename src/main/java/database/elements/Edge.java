@@ -1,6 +1,10 @@
 package database.elements;
 
-public class Edge {
+import database.SchemaGraph;
+
+import java.io.Serializable;
+
+public class Edge implements Serializable {
     public SchemaElement right;
     public SchemaElement left;
 
@@ -11,10 +15,9 @@ public class Edge {
 
     public String printEdge() {
         String result = "";
-        if (left.type == "fk") {
+        if (left.type.equals("fk")) {
             result += left.relation.name + "." + left.name;
-        }
-        else {
+        } else {
             result += left.relation.name + "." + left.relation.pk.name;
         }
 
