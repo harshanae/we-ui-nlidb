@@ -58,13 +58,13 @@ public class IntermediateTreeNode implements Serializable, Comparable<Intermedia
             }
             for(int i=0; i<children.size(); i++) {
                 // if child i doesnt equal to CMT AND child i doesnt equal to Operator up valid is false
-                if(!(children.get(i).tokenType.equals("CMT") || children.get(i).tokenType.equals("WPT")) && !children.get(i).tokenType.equals("OT")) {
+                if(!(children.get(i).isQuestionWord() || children.get(i).tokenType.equals("WPT")) && !children.get(i).tokenType.equals("OT")) {
                     children.get(i).upValid = false;
                 }
             }
         }
         // if node equals CMT
-        if(tokenType.equals("CMT") || tokenType.equals("WPT")) {
+        if(isQuestionWord()) {
             int name_value_function_token_num = 0;
             for (IntermediateTreeNode child : children) {
                 // if child equals a function that is (not min or max) or child is a node with mapped elements
@@ -100,12 +100,12 @@ public class IntermediateTreeNode implements Serializable, Comparable<Intermedia
                 // if function is sum or avg
                 if(function.equals("sum") || function.equals("avg")) {
                     // if parent is not a operator or not a command upValid is false
-                    if(!parent.tokenType.equals("OT") && !(parent.tokenType.equals("CMT") || parent.tokenType.equals("WPT"))) {
+                    if(!parent.tokenType.equals("OT") && !(parent.isQuestionWord())) {
                         upValid = false;
                     }
                 } else { // other function ie: count
                     // if parent is operator, sum, avg or command up is valid
-                    if (parent.tokenType.equals("OT") || (parent.tokenType.equals("CMT") || parent.tokenType.equals("WPT")) || parent.function.equals("sum") || parent.function.equals("avg")) {
+                    if (parent.tokenType.equals("OT") || (parent.isQuestionWord()) || parent.function.equals("sum") || parent.function.equals("avg")) {
                         upValid = true;
                     }  else {
                         upValid = false;
@@ -305,6 +305,10 @@ public class IntermediateTreeNode implements Serializable, Comparable<Intermedia
         }
         toPrint += "Weight: " + weight + " \n";
         System.out.println(toPrint);
+    }
+
+    public boolean isQuestionWord() {
+        return tokenType.equals("WPT") || tokenType.equals("CMT") || tokenType.equals("HPT");
     }
 
 }

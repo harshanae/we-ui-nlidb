@@ -69,7 +69,7 @@ public class CommandInterface {
     }
 
     public static void main(String[] args) throws Exception {
-        CommandInterface commandInterface = new CommandInterface("imdb");
+        CommandInterface commandInterface = new CommandInterface("mas");
         commandInterface.readQuery();
     }
 

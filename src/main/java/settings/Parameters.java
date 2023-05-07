@@ -18,5 +18,7 @@ public class Parameters {
 
     public static boolean IS_AUTOMATED = true;
 
+    public static  double PROJECTED_PENALTY = 0.05;
+
 
 }

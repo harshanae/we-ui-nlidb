@@ -37,6 +37,9 @@ public class ParseTreeNode implements Serializable {
 
     public boolean isNegated = false;
 
+    public ParseTreeNode correspondingProjectedValueNode = null;
+    public  boolean isProjectedAttribute = false;
+
     public ParseTreeNode(int wordOrder, String label, String posValue, String relationship, String isQuotedS, ParseTreeNode parent) {
         this.nodeId = NODEID;
         NODEID++;
@@ -55,6 +58,61 @@ public class ParseTreeNode implements Serializable {
             return mappedSchemaElements.get(choice);
         }
         return null;
+    }
+
+
+    public boolean checkIsRelatedByForToken(String tokenType) {
+        boolean isRelated = false;
+        if(this.parent.tokenType.equals(tokenType)) {
+            isRelated = true;
+        } else {
+            for(int i=0; i<this.children.size(); i++) {
+                if(this.children.get(i).tokenType.equals(tokenType)) {
+                    isRelated = true;
+                    break;
+                }
+            }
+
+
+            // check sibling
+            for(int i=0; i<this.parent.children.size(); i++) {
+                if(!parent.tokenType.startsWith("NT") && this.parent.children.get(i).tokenType.equals(tokenType)) {
+                    isRelated = true;
+                    break;
+                }
+            }
+        }
+
+        return isRelated;
+    }
+
+    public boolean isRelatedToQuestionWord() {
+        if(this.checkIsRelatedByForToken("CMT")
+                || this.checkIsRelatedByForToken("WPT") || this .checkIsRelatedByForToken("HPT")) {
+            return true;
+        }
+        if(this.parent.posValue.startsWith("VB") && this.parent.parent.isQuestionWord() && this.parent.parent.children.size() == 1) {
+            for (ParseTreeNode child : this.parent.children) {
+                if(child.tokenType.equals("NT") && !child.equals(this)) {
+                    return false;
+                }
+            }
+            // only NT child in the VB scenario
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isDirectChildOfQuestionWord() {
+        if(this.parent.tokenType.equals("CMT")
+                || this.parent.tokenType.equals("WPT") || this.parent.tokenType.equals("HPT")) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isQuestionWord() {
+        return tokenType.equals("WPT") || tokenType.equals("CMT") || tokenType.equals("HPT");
     }
 
 

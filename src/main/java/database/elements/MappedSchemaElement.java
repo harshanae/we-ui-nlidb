@@ -8,8 +8,13 @@ public class MappedSchemaElement implements Comparable<MappedSchemaElement>, Ser
     public SchemaElement schemaElement;
     public double similarityScore = -1;
 
+    public boolean noValueExist = false;
+
+    public boolean isExactValueExist = false;
+
 //    public ArrayList<String> mappedValues = new ArrayList<String>();
 
+    public boolean isRelationMatch = false;
     public ArrayList<MappedValue> mappedValues = new ArrayList<>();
     public int choice;
 

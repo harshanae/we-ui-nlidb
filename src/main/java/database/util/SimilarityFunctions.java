@@ -154,6 +154,31 @@ public class SimilarityFunctions implements Serializable {
         }
     }
 
+    public static String getLemma(String label) {
+        CoreDocument document = pipeline.processToCoreDocument(label);
+        if (document.tokens().size()>0) {
+            return document.tokens().get(0).lemma();
+        } else {
+            return label;
+        }
+    }
+
+    public static String getFullWordLemma(String word) {
+        String multiWordLemma = "";
+
+        String [] words = multiWordLemma.split(" ");
+
+        if(words.length==1) {
+            return getLemma(word);
+        }
+        for (String w: words) {
+            multiWordLemma += getLemma(w);
+            multiWordLemma+=" ";
+        }
+
+        return multiWordLemma.trim();
+    }
+
 
 //    int sum =0, i = 0;
 //    double [] seq = new double[mappedSchemaElement.mappedValues.size()];

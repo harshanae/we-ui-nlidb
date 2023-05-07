@@ -26,9 +26,10 @@ public class KeywordMapper {
     private static Stack<ParseTreeNode> phraseCombDeletedStack = new Stack<>();
     public static void mapKeywords(Query query, Database db, Document tokens) throws Exception {
         System.out.println("Starting Keyword Mapping...");
-        identifyValuesNER(query);
+//        identifyValuesNER(query);
         identifyKeyTokens(query, db, tokens);
 //        considerValueVerbs(query);
+//        considerVerbNTMentions(query);
         handleOperatorConjunctions(query);
         deleteUselessNodes(query);
         mapDBElements(query, db);
@@ -176,19 +177,19 @@ public class KeywordMapper {
                         if((currentNode.relationship.startsWith("obl") || (currentNode.relationship.startsWith("obj") && currentNode.parent.posValue.startsWith("VB") && currentNode.parent.tokenType.equals("NA")))
                                 && !CommonFunctions.stopwords.contains(currentNode.parent.label.toLowerCase())
                                 && (!currentNode.isQuoted && !currentNode.parent.isQuoted)) {
-                            currentNode.parent.label = currentNode.parent.label + " " + currentNode.label;
-                            currentNode.parent.tokenType = "NTVT";
-                            System.out.println("Verb combination[obl obj]: "+currentNode.parent.label+" "+ currentNode.label);
-                            queryParseTree.deleteNode(currentNode);
-                            i--;
+//                            currentNode.parent.label = currentNode.parent.label + " " + currentNode.label;
+                            currentNode.tokenType = "NTVT";
+//                            System.out.println("Verb combination[obl obj]: "+currentNode.parent.label+" "+ currentNode.label);
+//                            queryParseTree.deleteNode(currentNode);
+//                            i--;
                         } else if (currentNode.relationship.startsWith("obl")  && currentNode.parent.tokenType.equals("NA")
                                 && CommonFunctions.stopwords.contains(currentNode.parent.label.toLowerCase())
                                 && (!currentNode.isQuoted && !currentNode.parent.isQuoted)) {
-                            currentNode.parent.label = currentNode.label;
-                            currentNode.parent.tokenType = "NTVT";
-                            System.out.println("Verb combination[obl obj]: "+currentNode.parent.label+" "+ currentNode.label);
-                            queryParseTree.deleteNode(currentNode);
-                            i--;
+//                            currentNode.parent.label = currentNode.label;
+                            currentNode.tokenType = "NTVT";
+//                            System.out.println("Verb combination[obl obj]: "+currentNode.parent.label+" "+ currentNode.label);
+//                            queryParseTree.deleteNode(currentNode);
+//                            i--;
                         } else {
                             currentNode.tokenType = "NTVT";
                         }
@@ -317,6 +318,51 @@ public class KeywordMapper {
             }
         }
         return false;
+    }
+
+    public static void checkExactValueMentions(ParseTreeNode treeNode, Database db) throws Exception {
+        if(db.isProjectedValueExist(treeNode)) {
+            boolean isProjectedMatch = false;
+            ParseTreeNode clonedNode = (ParseTreeNode) CommonFunctions.depthClone(treeNode);
+            ArrayList<MappedSchemaElement> projAttList = new ArrayList<>();
+            for (int j = 0; j<treeNode.mappedSchemaElements.size(); j++) {
+                MappedSchemaElement mse = treeNode.mappedSchemaElements.get(j);
+                if(mse.schemaElement.isProjected) {
+                    MappedSchemaElement projectedSchemaElement = new MappedSchemaElement(db.getProjectedAttribute(mse.schemaElement.projectedRelation, mse.schemaElement.projectedAttribute));
+                    projectedSchemaElement.similarityScore = 1 - Parameters.PROJECTED_PENALTY;
+                    projAttList.add(projectedSchemaElement);
+                    isProjectedMatch = true;
+                }
+                if(mse.mappedValues.size()>0) {
+                    treeNode.mappedSchemaElements.remove(mse);
+                    j--;
+                }
+            }
+            ArrayList<MappedSchemaElement> projToRemove = new ArrayList<>();
+            for (MappedSchemaElement mse: treeNode.mappedSchemaElements) {
+                for (MappedSchemaElement pmse: projAttList) {
+                    if(mse.schemaElement.elementID == pmse.schemaElement.elementID) {
+                        if (mse.mappedValues.isEmpty()) {
+                            mse.isRelationMatch = pmse.isRelationMatch;
+                            mse.isExactValueExist = pmse.isExactValueExist;
+                            mse.similarityScore = pmse.similarityScore;
+                            mse.mappedValues = pmse.mappedValues;
+                            mse.choice = pmse.choice;
+                            mse.noValueExist = pmse.noValueExist;
+                        }
+                        projToRemove.add(pmse);
+                    }
+                }
+            }
+            projAttList.removeAll(projToRemove);
+            treeNode.mappedSchemaElements.addAll(projAttList);
+            if(isProjectedMatch) {
+                clonedNode.tokenType = "VT";
+//                clonedNode.isCandidateSelectNT = false;
+                clonedNode.isProjectedAttribute = true;
+                treeNode.correspondingProjectedValueNode = clonedNode;
+            }
+        }
     }
 
     public static void mapDBElements(Query query, Database db) throws Exception {
@@ -646,6 +692,7 @@ public class KeywordMapper {
                     currentNode.parent.QT = currentNode.function;
                 }
                 parseTree.deleteNode(currentNode);
+                i--;
             }
         }
     }
@@ -750,6 +797,22 @@ public class KeywordMapper {
                 }
                 queryParseTree.deleteNode(node);
                 i--;
+            }
+        }
+    }
+
+    public static void considerVerbNTMentions(Query query) {
+        for (ParseTreeNode node : query.parseTree.allNodes) {
+            if (node.tokenType.equals("WPT") || node.tokenType.equals("WST") || node.tokenType.equals("HPT")) {
+                if ((node.tokenType.equals("WPT") || node.tokenType.equals("HPT")) &&
+                        (node.label.equalsIgnoreCase("who") || node.label.equalsIgnoreCase("when") || node.label.equalsIgnoreCase("where") || node.label.toLowerCase().startsWith("how"))
+                        && node.parent.posValue.startsWith("VB") && node.parent.tokenType.equals("NA") &&
+                        !CommonFunctions.stopwords.contains(node.parent.label)) {
+
+                        System.out.println("WH verb consideration: " + node.label + " -> " + node.parent.label);
+                        node.parent.tokenType = "NTVT";
+
+                }
             }
         }
     }

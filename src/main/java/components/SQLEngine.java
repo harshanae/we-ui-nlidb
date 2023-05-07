@@ -56,7 +56,7 @@ public class SQLEngine {
         while(!nodeList.isEmpty()) {
             ParseTreeNode currentNode= nodeList.remove(nodeList.size()-1);
             Block newBlock = null;
-            if(currentNode.parent != null && (currentNode.parent.tokenType.equals("CMT") || currentNode.parent.tokenType.equals("WPT"))) {
+            if(currentNode.parent != null && (currentNode.parent.isQuestionWord())) {
                 newBlock = new Block(query.blocks.size(), currentNode);
                 query.blocks.add(newBlock);
             } else if (currentNode.tokenType.equals("FT") && !currentNode.function.equals("max")) {
@@ -78,7 +78,7 @@ public class SQLEngine {
         for (Block block : blocks) {
             ParseTreeNode currentBlockRoot = block.blockRoot;
             while (currentBlockRoot.parent != null) {
-                if (currentBlockRoot.parent.tokenType.equals("CMT") || currentBlockRoot.tokenType.equals("WPT")) {
+                if (currentBlockRoot.parent.isQuestionWord()) {
                     mainBlock = block;
                     break;
                 }

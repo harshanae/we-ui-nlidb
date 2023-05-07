@@ -7,7 +7,7 @@ Who acted "John Nash" in the movie "A Beautiful Mind"? yes but not WHO acts
 Find all movies written by "Matt Damon" - ok UI
 Find all movies written and produced by "Woody Allen" - ok but need to be different conditions
 Find all movies featuring "Kate Winslet" - ok
-What was the budget of the movie Juno from 2007? - ok
+What was the budget of the movie "Juno" from 2007? - ok
 Find all comedies produced in year 2015 ** not
 Who was the actor that played "Vinny Gambini" in the movie "My Cousin Vinny"? - ok
 Find all actors born in "Los Angeles" after 1980 - ok
@@ -65,5 +65,5 @@ Which movie had the character "Daffy Duck" *** - not What is the movie with the 
 which company funded the "Mickey Mouse" series ***  - not (funded series)
 What are the roles in the movie "Daddy Long Legs" - ok UI delete needed
 List all male directors who worked with the "NBCUniversal" company - ok
-What are the movies related to nuclear weapons - ok
-List all the directors of movies about nuclear weapons - ok
+What are the movies related to "nuclear weapons" - ok
+List all the directors of movies about "nuclear weapons" - ok

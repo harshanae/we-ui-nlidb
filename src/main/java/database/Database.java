@@ -29,7 +29,7 @@ public class Database {
     }
 
     public boolean isSchemaExist(ParseTreeNode treeNode) throws Exception {
-        ArrayList<SchemaElement> attributes = schemaGraph.getSchemaElementsByType("text number double int");
+        ArrayList<SchemaElement> attributes = schemaGraph.getSchemaElementsByType("text number double int", true);
 
         for(int i=0; i<attributes.size(); i++) {
             MappedSchemaElement mappedElement = attributes.get(i).isSchemaExist(treeNode.label);
@@ -45,7 +45,7 @@ public class Database {
     }
 
     public boolean isValueExist(ParseTreeNode node) throws SQLException {
-        ArrayList<SchemaElement> textAttributes = schemaGraph.getSchemaElementsByType("text");
+        ArrayList<SchemaElement> textAttributes = schemaGraph.getSchemaElementsByType("text varchar char", false);
         for(int i=0; i<textAttributes.size(); i++) {
             MappedSchemaElement textAttribute = textAttributes.get(i).isValueExist(node.label, this.conn);
             if(textAttribute!=null) {
@@ -62,7 +62,7 @@ public class Database {
         if(!NumberUtils.isCreatable(node.label)) {
             return false;
         }
-        ArrayList<SchemaElement> numberAttributes = schemaGraph.getSchemaElementsByType("number double int");
+        ArrayList<SchemaElement> numberAttributes = schemaGraph.getSchemaElementsByType("number double int", false);
         for(int i=0; i<numberAttributes.size(); i++) {
             MappedSchemaElement numberAttribute = numberAttributes.get(i).isNumberValueExist(node.label, operator, conn);
             if (numberAttribute!=null) {
@@ -75,6 +75,50 @@ public class Database {
         }
         return false;
     }
+
+    public boolean isProjectedValueExist(ParseTreeNode node) throws SQLException {
+        ArrayList<SchemaElement> attributes = schemaGraph.getSchemaElementsByType("text varchar char", false);
+        boolean isProjAttributeMapExist = false;
+        for(int i=0; i<attributes.size(); i++) {
+            if(attributes.get(i).isProjected) {
+                MappedSchemaElement attribute = attributes.get(i).isExactValueExist(node.label, this.conn);
+                if(attribute!=null) {
+                    boolean isElementExist = false;
+                    isProjAttributeMapExist = true;
+                    for (MappedSchemaElement mse: node.mappedSchemaElements) {
+                        if(mse.schemaElement.elementID == attribute.schemaElement.elementID) {
+                            isElementExist = true;
+                            mse.isRelationMatch = attribute.isRelationMatch;
+                            mse.isExactValueExist = attribute.isExactValueExist;
+                            mse.similarityScore = attribute.similarityScore;
+                            mse.mappedValues = attribute.mappedValues;
+                            mse.choice = attribute.choice;
+                            mse.noValueExist = attribute.noValueExist;
+                            break;
+                        }
+                    }
+                    if(!isElementExist) node.mappedSchemaElements.add(attribute);
+                }
+            }
+        }
+        if(!node.mappedSchemaElements.isEmpty()) {
+            return true && isProjAttributeMapExist;
+        }
+        return false;
+    }
+
+
+    public SchemaElement getProjectedAttribute(String relationName, String attName) {
+        int schemaElementId = schemaGraph.searchAttribute(relationName, attName);
+        for (SchemaElement schemaElement: schemaGraph.schemaElements) {
+            if(schemaElement.elementID == schemaElementId) {
+                return schemaElement;
+            }
+        }
+        return null;
+    }
+
+
 
 
 

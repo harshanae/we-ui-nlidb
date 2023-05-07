@@ -13,17 +13,27 @@ public class SchemaElement implements Serializable {
     public int elementID = 0;
     public String name = "";
     public String type = ""; // type relation, entity, attribute, fk, pk ...
+    public String NERCategory = ""; // NER category
 
     public SchemaElement relation; // for attributes
 
     public ArrayList<SchemaElement> attributes = new ArrayList<SchemaElement>(); // relations and entities
 
     public SchemaElement pk; // for entities
+
+    public boolean isFK = false;
+
+    public boolean isID = false;
+    public boolean isAI = false;
     public SchemaElement defaultAttribute; // for relations and entities
     public ArrayList<SchemaElement> inElements = new ArrayList<SchemaElement>();
 
-    public SimilarityFunctions similarityFunctions;
+    public boolean isProjected = false;
+    public String projectedRelation;
+    public String projectedAttribute;
 
+    public String dateType = "NA";
+    public SimilarityFunctions similarityFunctions;
 
     public SchemaElement(int elementID, String name, String type) {
         this.elementID = elementID;
@@ -42,8 +52,13 @@ public class SchemaElement implements Serializable {
         if(this.equals(this.relation.defaultAttribute)) {
             if(similarityFunctions.isSchemaSimilar(this.relation, tag) || similarityFunctions.isSchemaSimilar(this, tag)) {
                 MappedSchemaElement mappedSchemaElement = new MappedSchemaElement(this);
-                mappedSchemaElement.similarityScore = similarityFunctions.similarity(this.relation, tag);
-//                mappedSchemaElement.similarityScore = 1-(1-mappedSchemaElement.similarityScore)*(1-similarityFunctions.similarity(this, tag));
+                double relationSimScore = similarityFunctions.similarity(this.relation, tag);
+                if(relationSimScore >= 0.75) {
+                    mappedSchemaElement.similarityScore = relationSimScore;
+                } else {
+                    double defaultAttSimScore = similarityFunctions.similarity(this, tag);
+                    mappedSchemaElement.similarityScore = Math.max(relationSimScore, defaultAttSimScore);
+                }
                 // logic
                 return  mappedSchemaElement;
             }
@@ -108,6 +123,35 @@ public class SchemaElement implements Serializable {
             return  mappedSchemaElement;
         }
         return null;
+    }
+
+    public MappedSchemaElement isExactValueExist(String value, Connection connection) throws SQLException {
+        Statement statement = connection.createStatement();
+
+
+        String sql = "SELECT "+this.name+" FROM "+this.relation.name + " WHERE MATCH("+this.name + ") AGAINST ('*"+value+"* *"+SimilarityFunctions.getFullWordLemma(value)+"*' IN BOOLEAN MODE) LIMIT 0, 2000";
+        ResultSet result = statement.executeQuery(sql);
+
+        MappedSchemaElement mappedSchemaElement = new MappedSchemaElement(this);
+
+        boolean isExactValExist = false;
+        while(result.next()) {
+            String resultVal = result.getString(1);
+            MappedValue mappedValue = new MappedValue(resultVal);
+            mappedSchemaElement.mappedValues.add(mappedValue);
+            if(value.split("[\\s-]+").length==1 && resultVal.split("[\\s-]+").length==1) {
+                if(resultVal.equals(value) || SimilarityFunctions.getLemma(resultVal).equalsIgnoreCase(SimilarityFunctions.getLemma(value))) {
+                    isExactValExist = true;
+                }
+            } else if (value.equalsIgnoreCase(resultVal)) {
+                isExactValExist = true;
+            }
+        }
+
+        if(!mappedSchemaElement.mappedValues.isEmpty() && isExactValExist) {
+            return mappedSchemaElement;
+        }
+        return  null;
     }
  
 

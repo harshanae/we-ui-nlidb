@@ -57,9 +57,15 @@ public class SchemaGraph {
                     relation.pk = attribute;
                 }
 
-//                if(attributeObj.has("pk")) {
-//                    relation.pk = attribute;
-//                }
+                if(attributeObj.has("dateType")) {
+                    attribute.dateType = attributeObj.get("dateType").getAsString();
+                }
+
+                if(attributeObj.has("isProjected")) {
+                    attribute.isProjected = true;
+                    attribute.projectedRelation = attributeObj.get("projectedRelation").getAsString();
+                    attribute.projectedAttribute = attributeObj.get("projectedAttribute").getAsString();
+                }
             }
         }
 
@@ -71,7 +77,7 @@ public class SchemaGraph {
             }
         }
 
-        ArrayList<SchemaElement> rels = this.getSchemaElementsByType("relationship entity");
+        ArrayList<SchemaElement> rels = this.getSchemaElementsByType("relationship entity", true);
 
         for (int i = 0; i < rels.size(); i++) {
             SchemaElement rel = rels.get(i);
@@ -273,13 +279,15 @@ public class SchemaGraph {
     }
 
 
-    public ArrayList<SchemaElement> getSchemaElementsByType(String typeList) {
+    public ArrayList<SchemaElement> getSchemaElementsByType(String typeList, boolean getIDs) {
         String [] types = typeList.split(" ");
         ArrayList<SchemaElement> relatons = new ArrayList<SchemaElement>();
         for(int i=0; i<schemaElements.size(); i++){
             for(int j=0;j<types.length; j++) {
                 if(schemaElements.get(i).type.equals(types[j])) {
-                    relatons.add(schemaElements.get(i));
+                    if((getIDs || !schemaElements.get(i).isID) && !schemaElements.get(i).isFK && !schemaElements.get(i).isAI) {
+                        relatons.add(schemaElements.get(i));
+                    }
                 }
             }
         }
@@ -333,6 +341,25 @@ public class SchemaGraph {
         return this.shortestDistance[source.elementID][destination.elementID];
     }
 
+
+    public ArrayList<SchemaElement> getSchemaElementsByNERCategory(String categoryList, boolean checkIDs) {
+        String [] types = categoryList.split(" ");
+        ArrayList<SchemaElement> relatons = new ArrayList<SchemaElement>();
+        for(int i=0; i<schemaElements.size(); i++){
+            for(int j=0;j<types.length; j++) {
+                SchemaElement element =  schemaElements.get(i);
+                if(element.NERCategory.equals(types[j])) {
+                    if(element.isID) {
+                        if (checkIDs) relatons.add(element);
+                    } else {
+                        relatons.add(element);
+                    }
+                }
+            }
+        }
+
+        return relatons;
+    }
 
     // TODO: add get neighbours?
 

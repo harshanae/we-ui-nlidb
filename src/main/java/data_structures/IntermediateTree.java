@@ -133,9 +133,9 @@ public class IntermediateTree implements Serializable, Comparable<IntermediateTr
 //            System.out.print(": true(node is THE parent new parent children==0  && (ttype OT or FT)\n");
             return true;
         }
-        else if (query.queryType == Parameters.QUERY_TYPE.W_QUESTION) {
+        else if (query.queryType == Parameters.QUERY_TYPE.W_QUESTION || query.queryType == Parameters.QUERY_TYPE.H_QUESTION) {
             if (newParent.children.isEmpty()
-                    && (newParent.tokenType.equals("WPT"))) {
+                    && (newParent.isQuestionWord())) {
                 IntermediateTreeNode oldParent = treeNode.parent;
                 oldParent.children.add(newParent);
                 newParent.parent = oldParent;
@@ -145,6 +145,22 @@ public class IntermediateTree implements Serializable, Comparable<IntermediateTr
                 newParent.children.add(treeNode);
 //                System.out.print(": true(node is THE parent new parent children==0  && (ttype OT or FT)\n");
                 return true;
+            } else if (newParent.isQuestionWord() && treeNode.tokenType.equals("NT")) {
+                IntermediateTreeNode oldParent = treeNode.parent;
+                ArrayList<IntermediateTreeNode> newChildren = new ArrayList<>(newParent.children);
+                for (IntermediateTreeNode child : newChildren) {
+                    newParent.children.remove(child);
+                    child.parent = treeNode;
+                    treeNode.children.add(child);
+                }
+                oldParent.children.add(newParent);
+                newParent.parent = oldParent;
+                oldParent.children.remove(treeNode);
+                treeNode.parent = newParent;
+                treeNode.children.remove(newParent);
+                newParent.children.add(treeNode);
+                return true;
+
             } else {
                 return  false;
             }

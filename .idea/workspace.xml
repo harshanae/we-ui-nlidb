@@ -5,55 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1537743c-4633-4d25-8b8d-72c6eda89e6f" name="Changes" comment="updated gitignore file">
-      <change afterPath="$PROJECT_DIR$/files/contractions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/tokens.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/IdentifyEntitites.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/IntermediateTreeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/KeywordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/SQLEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/Block.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/EntityPair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/FromContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/IntermediateTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/IntermediateTreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/NLSentence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/SQLElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/SelectContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_structures/WhereContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/elements/MappedValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/CommonFunctions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/Contractions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/Dijkstra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/EucledianDistance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/InferAttributeNER.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/LevensteinDistanceDP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/PreprocessPipeline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/SimilarityFunctions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/util/Word2Vec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/settings/Parameters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/source-files/imdbEdges.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/source-files/imdbRelations.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/source-files/studentEdges.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/source-files/studentRelations.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/source-files/yelpEdges.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/source-files/yelpRelations.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/word2vec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/imdb/old/imdb_c2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/imdb/old/imdb_c2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/command_interface/CommandInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command_interface/CommandInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/StanfordNLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/StanfordNLParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_structures/ParseTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_structures/ParseTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/KeywordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/KeywordMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/SQLEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/SQLEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data_structures/IntermediateTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_structures/IntermediateTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data_structures/IntermediateTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_structures/IntermediateTreeNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data_structures/ParseTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_structures/ParseTreeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_structures/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_structures/Query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_structures/Sentence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_structures/Sentence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/SchemaGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/SchemaGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/elements/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/elements/Edge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/elements/MappedSchemaElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/elements/MappedSchemaElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/elements/SchemaElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/elements/SchemaElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/util/SimilarityFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/util/SimilarityFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/settings/Parameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/settings/Parameters.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +75,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Uni/4th_Year/Research/My code/my nlidb/we-ui-nlidb/libs&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Uni/4th_Year/Research/My code/nlidb with Angular/we-ui-nlidb&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -305,7 +270,12 @@
       <workItem from="1678616001777" duration="16817000" />
       <workItem from="1678647823764" duration="13893000" />
       <workItem from="1678722702034" duration="1242000" />
-      <workItem from="1678732923293" duration="8683000" />
+      <workItem from="1678732923293" duration="9427000" />
+      <workItem from="1682613254879" duration="3835000" />
+      <workItem from="1683116013913" duration="32112000" />
+      <workItem from="1683224677884" duration="167000" />
+      <workItem from="1683260993371" duration="9291000" />
+      <workItem from="1683381011835" duration="2305000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667373957454</created>
